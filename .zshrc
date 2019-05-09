@@ -1,12 +1,13 @@
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/Users/yangminghui/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="ys"
+#ZSH_THEME="ys"
+ZSH_THEME="honukai"
 #ZSH_THEME="tonotdo"
 #ZSH_THEME="dst"
 #ZSH_THEME="cypher"
@@ -64,6 +65,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/yangminghui/.bash_profile
+source /Users/yangminghui/.bashrc
+source /Users/yangminghui/.bash_rc
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -373,4 +378,24 @@ unset file;
 #https://github.com/jenssegers/dotfiles/blob/master/.aliases
 #
 #
+
+# Set standby delay to 24 hours (default is 1 hour)
+sudo pmset -a standbydelay 86400
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+
+# Never go into computer sleep mode
+sudo systemsetup -setcomputersleep Off > /dev/null
+
+# Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0
+
+#设置截屏保存位置
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+alias cls='clear'
+alias la='ls -a'
+alias javac="javac -J-Dfile.encoding=utf8"
 
