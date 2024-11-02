@@ -42,7 +42,19 @@ export PATH=$PATH:$GOBIN/bin
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
     alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
     alias ssh="TERM=xterm-256color ssh"
+alias kill1="lsof -i:18201 | awk -F ' ' '{print $2}' | grep -v 'PID' | xargs kill -9"
+alias kill2="lsof -i:18202 | awk -F ' ' '{print $2}' | grep -v 'PID' | xargs kill -9"
+alias echo1="ps -ef | grep swoft | grep master | grep yangmin | awk -F ' ' '{print $2}'  | xargs echo"
 
+#lsof -i tcp:9501 | grep -v PID | awk -F ' ' '{print $2}' | xargs kill
+alias test_port="lsof -i :18201"
+alias ps1="ps -ef | grep swoft | grep master | grep yangmin"
+alias cdn="cd /etc/nginx/conf.d/"
+alias cdlog="cd /var/log/nginx/"
+alias ..="cd .."
+alias ...="cd ../.."
+alias clean="git clean -f && git reset --hard"
+alias gp="git clean -f && git reset --hard && git pull"
 
 
 
